@@ -14,10 +14,7 @@
 
 <!-- PROJECT LOGO -->
 <br />
-<div align="center">
-  <a href="https://github.com/jiokeokwuosa/GoFundMe">
-    <img src="images/logo.png" alt="Logo" width="80" height="80">
-  </a>
+<div align="center">  
 
   <h3 align="center">GoFundMe Contract</h3>
   <p align="center">
@@ -71,8 +68,8 @@ A contract buitl with solidity that helps users to receive funds from different 
 
 ### Built With
 
-* [![Solidity][https://docs.soliditylang.org/en/v0.8.17/]][Solidity-url]
-* [![Hardhat][https://hardhat.org/]][Hardhat-url]
+* [Solidity](https://docs.soliditylang.org/en/v0.8.17/])
+* [Hardhat](https://hardhat.org/]][Hardhat-url)
 
 
 
