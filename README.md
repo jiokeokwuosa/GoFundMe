@@ -52,7 +52,7 @@
 
 <!-- ABOUT THE PROJECT -->
 ## About The Project
-A contract buitl with solidity that helps users to receive funds from different addresses and equally withdraw the funds
+A contract built with solidity that helps users to receive funds from different addresses and equally withdraw the funds
 
 
 ### Built With
