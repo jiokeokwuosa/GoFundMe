@@ -20,13 +20,10 @@ contract GoFundMe {
   address public immutable i_owner; // owner of the contract
   AggregatorV3Interface public s_priceFeed;
 
-  // a modifier is a keyword we can add to a function declaration to modifier the behaviour of that function
   modifier onlyOwner() {
     if (msg.sender != i_owner)
       revert GoFundMe__NotOwner({message: "Sender is not contract owner"});
-    _; /* this line means do the rest of the code in the function that calls this
-       modifier after running the code in this modifier, if this _; comes first in the modifier
-       it means do every thing in the calling function first before running the content of the modifier*/
+    _; 
   }
 
   constructor(address s_priceFeedAddress) {
