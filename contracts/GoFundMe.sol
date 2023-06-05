@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.7;
-import "./PriceConverterLibrary.sol";
+import "./libraries/PriceConverter.sol";
 
 error GoFundMe__NotOwner(string message);
 error GoFundMe__AmountNotEnough(string message);
