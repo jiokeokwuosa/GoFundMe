@@ -55,35 +55,12 @@ contract GoFundMe {
   }
 
   function withdraw() public onlyOwner {
-    for (uint256 funderIndex = 0; funderIndex < s_funders.length; funderIndex++) {
-      address funder = s_funders[funderIndex];
-      s_addressToAmountFunded[funder] = 0;
-    }
-    //reset s_funders array to new array with zero item
+    // reset s_funders array to new array with zero item
     s_funders = new address[](0);   
     (bool callSuccess, ) = payable(msg.sender).call{
       value: address(this).balance
     }("");
     if (!callSuccess)
       revert GoFundMe__WithdrawalFailed({message: "Transfer failed"});
-  }
-
-  function cheaperWithdraw() public onlyOwner {
-    /* reading from storage once is better that reading from it continously in the loop.
-      reading and writing to  storage comsumes much gas, so it is better to loop 
-      from memory than storage    
-    */
-    address[] memory funders = s_funders;
-    for (uint256 funderIndex = 0; funderIndex < funders.length; funderIndex++) {
-      address funder = funders[funderIndex];
-      s_addressToAmountFunded[funder] = 0;
-    }
-    //reset s_funders array to new array with zero item
-    s_funders = new address[](0);   
-    (bool callSuccess, ) = payable(msg.sender).call{
-      value: address(this).balance
-    }("");
-    if (!callSuccess)
-      revert GoFundMe__WithdrawalFailed({message: "Transfer failed"});
-  }
+  } 
 }
